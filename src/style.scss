@@ -1,0 +1,66 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app{
+  background-color: rgb(5, 48, 77);
+  height: 100vh;
+  width: 100%;
+  color: #ffffff;
+}
+
+.app{
+  .app-div{
+  width: 70%;
+  margin: auto;
+  padding: 4rem 0;
+  }
+}
+
+
+.note{
+  min-height: 70vh;
+  border: 1px solid white;
+  .todo-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .3em;
+    margin: .6rem 0;
+    p{
+      width: 80%;
+    }
+    .checked{
+      background-color: red;
+    }
+    .del,.check{
+      border: 2px solid rgb(167, 167, 167);
+    }
+  }
+}
+
+form{
+  .input-div{
+    display: flex;
+    align-items: center;
+    input{
+      width: 100%;
+      font-size: 1rem;
+      padding: 0.2em 1em;
+      color: #000000;
+      outline: none;
+      border: none;
+    }
+    button{
+      font-size: 1rem;
+      padding: 0.2em 1em;
+      background-color: #b6b5b5;
+      color: #000000;
+      outline: none;
+      border: none;
+    }
+  }
+}
+
