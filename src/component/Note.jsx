@@ -1,25 +1,21 @@
 import React from 'react'
+import TodoList from './TodoList'
 
-const Note = ({todos , handleDelete , handleCheck}) => {
+const Note = ({setTodos ,todos}) => {
+
+
   return (
+    
     <div className='note'>
         {
-          todos.map(todo => {
-            return (
-              <div className="todo-list" key={todo.qty}>
-                <p className={todo.check ? 'checked' : ''}>{todo.text}</p>
-                <span 
-                className="check"
-                onClick={() => handleCheck(todo.check)}
-                >C</span>
-                <button 
-                className='del'
-                onClick={() => handleDelete(todo.qty)}
-                >del</button>
-
-              </div>
-            )
-          })
+          todos.map(todo => 
+          <TodoList 
+            key={todo.qty}
+            todo={todo}
+            setTodos={setTodos}
+            todos={todos}
+          />
+          )
         }
     </div>
   )

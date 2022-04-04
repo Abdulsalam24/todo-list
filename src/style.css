@@ -4,9 +4,12 @@
   padding: 0;
 }
 
-.app {
+body {
   background-color: #05304d;
-  height: 100vh;
+}
+
+.app {
+  height: 100%;
   width: 100%;
   color: #ffffff;
 }
@@ -17,9 +20,19 @@
   padding: 4rem 0;
 }
 
+select {
+  background-color: #b6b5b5;
+  border: none;
+  outline: none;
+}
+select option {
+  background-color: #414040;
+}
+
 .note {
   min-height: 70vh;
-  border: 1px solid white;
+  border-radius: 2px;
+  box-shadow: 1px 1px 7px #807f7f;
 }
 .note .todo-list {
   display: flex;
@@ -29,12 +42,13 @@
   margin: 0.6rem 0;
 }
 .note .todo-list p {
-  width: 80%;
+  width: 90%;
 }
 .note .todo-list .checked {
-  background-color: red;
+  text-decoration: line-through;
 }
 .note .todo-list .del, .note .todo-list .check {
+  cursor: pointer;
   border: 2px solid #a7a7a7;
 }
 
@@ -42,13 +56,24 @@ form .input-div {
   display: flex;
   align-items: center;
 }
-form .input-div input {
+form .input-div .input {
+  position: relative;
+  width: 100%;
+}
+form .input-div .input input {
   width: 100%;
   font-size: 1rem;
-  padding: 0.2em 1em;
+  padding: 0.5em 1em;
   color: #000000;
   outline: none;
   border: none;
+}
+form .input-div .input button {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  font-size: 1rem;
+  padding: 0.2em 1em;
 }
 form .input-div button {
   font-size: 1rem;

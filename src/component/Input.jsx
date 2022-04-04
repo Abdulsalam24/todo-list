@@ -1,20 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Input = ({handleChange ,handleSubmit , text}) => {
+    const [checked , setChecked] = useState()
 
+    // const handleCheck = (e) => {
+    //     if
+    // }
+    
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="input-div">
-                <input 
-                type="text" 
-                placeholder='add text'
-                value={text}
-                onChange={e => handleChange(e.target.value)}
-                />
+        <>
+            <select name="" id="">
+                <option value="">All</option>
+                <option value="">Checked</option>
+                <option value="">unChecked</option>
+            </select>
 
-                <button>Add</button>
-            </div>
-        </form>
+            <form onSubmit={handleSubmit}>
+                <div className="input-div">
+                    <div className='input'>
+                        <input 
+                        type="text" 
+                        placeholder='add text'
+                        value={text}
+                        onChange={e => handleChange(e.target.value)}
+                        />
+
+                        <button>+</button>
+                    </div>
+                </div>
+            </form>
+        </>
     )
 }
 

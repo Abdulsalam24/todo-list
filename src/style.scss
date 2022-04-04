@@ -3,10 +3,12 @@
   margin: 0;
   padding: 0;
 }
+body{
+  background-color: rgb(5, 48, 77);
+}
 
 .app{
-  background-color: rgb(5, 48, 77);
-  height: 100vh;
+  height: 100%;
   width: 100%;
   color: #ffffff;
 }
@@ -19,10 +21,19 @@
   }
 }
 
+select{
+  background-color: #b6b5b5;
+  border: none;
+  outline: none;
+  option{
+    background-color: #414040;
+  }
+}
 
 .note{
   min-height: 70vh;
-  border: 1px solid white;
+  border-radius: 2px;
+  box-shadow: 1px 1px 7px rgb(128, 127, 127);
   .todo-list{
     display: flex;
     align-items: center;
@@ -30,12 +41,15 @@
     padding: 0 .3em;
     margin: .6rem 0;
     p{
-      width: 80%;
+      width: 90%;
     }
     .checked{
-      background-color: red;
+      text-decoration: line-through;
+      // background-color: red;
+      
     }
     .del,.check{
+      cursor: pointer;
       border: 2px solid rgb(167, 167, 167);
     }
   }
@@ -45,13 +59,24 @@ form{
   .input-div{
     display: flex;
     align-items: center;
-    input{
+    .input{
+      position: relative;
       width: 100%;
-      font-size: 1rem;
-      padding: 0.2em 1em;
-      color: #000000;
-      outline: none;
-      border: none;
+      input{
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.5em 1em;
+        color: #000000;
+        outline: none;
+        border: none;
+      }
+      button{
+        position: absolute;
+        right: 0;
+        top: 5px;
+        font-size: 1rem;
+        padding: 0.2em 1em;
+      }
     }
     button{
       font-size: 1rem;

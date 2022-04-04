@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+
+import { useState } from 'react'
 import Input from './Input.jsx'
 import Note from './Note.jsx'
 
 const Todo = () => {
     const [text , setText] = useState('')
     const [todos , setTodos] = useState([])
-
-
+    const [filter , setFilter] = useState([])
 
     const handleChange = (e) => {
         setText(e)
@@ -14,33 +14,28 @@ const Todo = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('sumited')
-        setTodos([ ...todos , {text : text , qty : todos.length , check : false }])
-        setText('')
-    }
-
-    const handleDelete = (e) => {
-        const exist = todos.some(todo => todo.qty === e)
-        if(exist){
-            const filter = todos.filter(todo => todo.qty !== e)
-            setTodos(filter)
+        if(text !== ''){
+          setTodos([ ...todos , {text : text , qty : todos.length , check : true }])
+          setText('')
+          
         }else{
-            return setTodos(todos)
+          setTodos(todos)
+          alert('You have not input any text ;)')
         }
     }
 
-    const handleCheck = (e) => {
-        setTodos([...todos , { check : !e }])
-    }
-
-
-
   return (
-    <>
-        <Input handleChange={handleChange} text={text} handleSubmit={handleSubmit}/>
-        <Note todos={todos} handleCheck={handleCheck} handleDelete={handleDelete}/>
-
-    </>
+    <div>
+        <Input 
+        handleChange={handleChange} 
+        text={text} 
+        handleSubmit={handleSubmit}
+        />
+        <Note 
+        setTodos={setTodos} 
+        todos={todos}
+        />
+    </div>
   )
 }
 
